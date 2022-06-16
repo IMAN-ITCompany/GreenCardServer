@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Carousel Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+
+    
+
+    
+
+<link href="../static/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../static/css/carousel.css" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      ymaps.ready(init);
+      function init(){
+          var myMap = new ymaps.Map("map", {
+              center: [39.667616747645624, 66.92499319607157],
+              zoom: 17,
+              controls:[],
+          });
+          myMap.geoObjects.add(new ymaps.Placemark([39.667616747645624, 66.92499319607157], {
+            balloonContent: 'Manzil:Samarqand shahar, Pavarot, IMAN GreenCard',
+        }, {
+            preset: 'islands#icon',
+            iconColor: '#0095b6',
+        }));
+
+      }
+  </script>
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">IMAN-GreenCard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ariza yuborish</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Natijani tekshirish</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Biz bilan bog'lanish</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Biz haqimizda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Statistika</a>
+          </li>
+          
+          
+        </ul>
+        <div class="d-flex" style="margin-right: 10px;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              UZ
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">RU</a></li>
+              <li><a class="dropdown-item" href="#">EN</a></li>
+            </ul>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>0
+
+<main>
+
+  <div style="padding:2%;">
+    <form class="row g-3 needs-validation" novalidate>
+      <p class="text-center h4 col-md-12" style="margin-top:25px;">Shaxsiy ma'lumotlaringizni kiriting</p>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Ism</label>
+        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+        <div class="valid-feedback">
+          Javoxir
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Familya</label>
+        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+        <div class="valid-feedback">
+          Toshmurodov
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustomUsername" class="form-label">Telefon raqam</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">+998</span>
+          <input type="text" class="form-control" id="validationCustomUsername" value="(00) 000-00-00" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Iltimos telefon raqamingizni kiriting!
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <label for="validationCustom04" class="form-label">Jinsi</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">Erkak</option>
+          <option>Ayol</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Davlat</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected disabled value="">Uzbekiston</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Viloyat</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">Toshkent</option>
+          <option>Samarqand</option>
+          <option>Andijon</option>
+          <option>Namangan</option>
+          <option>Farg'ona</option>
+          <option>Xorazm</option>
+          <option>Navoi</option>
+          <option>Jizzax</option>
+          <option>Qashqadaryo</option>
+          <option>Surxondaryo</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Shahar/Tuman</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">Toshkent</option>
+          <option>Ishtixon</option>
+          <option>Qo'shrabot</option>
+          <option>Samarqand</option>
+          <option>Urgut</option>
+          <option>Pastdarg'om</option>
+          <option>Kattaqo'rg'on</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+
+      <p class="text-center h5 col-md-12" style="margin-top:25px;">Tug'ilgan sanangizni kiriting</p>
+
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Kun</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected disabled value="">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+          <option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option>
+          <option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option>
+          <option>29</option><option>30</option><option>31</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Oy</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">Yanvar</option>
+          <option>Fevral</option>
+          <option>Mart</option>
+          <option>Aprel</option>
+          <option>May</option>
+          <option>Iyun</option>
+          <option>Iyul</option>
+          <option>Avgust</option>
+          <option>Sintiyabr</option>
+          <option>Oktiyabr</option>
+          <option>Noyabr</option>
+          <option>Dekabr</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label">Yil</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">2022</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+          <option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option>
+          <option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option>
+          <option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option>
+          <option>1996</option><option>1995</option><option>1994</option><option>1993</option><option>1992</option><option>1991</option><option>1990</option>
+          <option>1989</option><option>1988</option><option>1987</option><option>1986</option><option>1985</option><option>1984</option><option>1983</option>
+          <option>1982</option><option>1981</option><option>1980</option><option>1979</option><option>1978</option><option>1977</option><option>1976</option>
+          <option>1975</option><option>1974</option><option>1973</option><option>1972</option><option>1971</option><option>1970</option><option>1969</option>
+          <option>1968</option><option>1967</option><option>1966</option><option>1965</option><option>1964</option><option>1963</option><option>1962</option>
+          <option>1961</option><option>1960</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      <p class="text-center h5 col-md-12" style="margin-top:25px;">Passport ID va uning yaroqlilik muddati</p>
+      <div class="col-md-3">
+        <label for="validationCustom01" class="form-label">Passport ID</label>
+        <input type="text" class="form-control" id="validationCustom01" value="AA000000" required>
+        <div class="valid-feedback">
+          Javoxir
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Kun</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+          <option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option>
+          <option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option>
+          <option>29</option><option>30</option><option>31</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Oy</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">Yanvar</option>
+          <option>Fevral</option>
+          <option>Mart</option>
+          <option>Aprel</option>
+          <option>May</option>
+          <option>Iyun</option>
+          <option>Iyul</option>
+          <option>Avgust</option>
+          <option>Sintiyabr</option>
+          <option>Oktiyabr</option>
+          <option>Noyabr</option>
+          <option>Dekabr</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Yil</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected value="">2022</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+          <option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option>
+          <option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option>
+          <option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option>
+          <option>1996</option><option>1995</option><option>1994</option><option>1993</option><option>1992</option><option>1991</option><option>1990</option>
+          <option>1989</option><option>1988</option><option>1987</option><option>1986</option><option>1985</option><option>1984</option><option>1983</option>
+          <option>1982</option><option>1981</option><option>1980</option><option>1979</option><option>1978</option><option>1977</option><option>1976</option>
+          <option>1975</option><option>1974</option><option>1973</option><option>1972</option><option>1971</option><option>1970</option><option>1969</option>
+          <option>1968</option><option>1967</option><option>1966</option><option>1965</option><option>1964</option><option>1963</option><option>1962</option>
+          <option>1961</option><option>1960</option>
+        </select>
+        <div class="invalid-feedback">
+          Iltimos viloyatni tanlang!
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
